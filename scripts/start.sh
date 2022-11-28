@@ -25,7 +25,7 @@ chmod +x $JAR_NAME
 echo "> $JAR_NAME 실행"
 
 IDLE_PROFILE=$(find_idle_profile)
-echo "> $JAR_NAME 을 profile=$IDLE_PROFILE 로 실행합니다."
+echo "> $JAR_NAME 을 profile-$IDLE_PROFILE 로 실행합니다."
 nohup java -jar \
         -Dspring.config.location=classpath:/application.properties,classpath:/application-$IDLE_PROFILE.properties,/home/ec2-user/app/application-oauth.properties,/home/ec2-user/app/application-real-db.properties \
         -Dspring.profiles.active=$IDLE_PROFILE \
